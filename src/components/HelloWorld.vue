@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue"
+import { computed } from "vue"
 
 defineProps({
   msg: String,
@@ -19,6 +20,20 @@ const toggleEditMode = () => {
   editMode.value = !editMode.value
 }
 
+//computed propertiy 
+
+const fullName = computed(() => {
+  return `${userCredentials.value.name} ${userCredentials.value.lastName}`
+})
+
+
+//set wachers 
+
+// watch(userCredentials, (newValue, oldValue) => {
+//   console.log("new value", newValue)
+//   console.log("old value", oldValue)
+// })
+
 let age = ref(20)
 
 const increaseAge = () => {
@@ -32,8 +47,11 @@ const increaseAge = () => {
     <p v-html="HTMLTag"></p>
     <a :href="link">:href</a>
   </div>
+  <h1>
+    {{ fullName }}
+  </h1>
   <div class="flex  flex-row space-x-2 my-4"  v-show="!editMode">
-    <input type="text" class=" black w-[120px] outline-none border-none "  v-model="userCredentials.name" />
+    <input type="text" class=" black w-[120px] outline-none border-none "  v-model.lazy.trim="userCredentials.name" />
     <input type="text" class=" w-[120px] outline-none border-none " v-model="userCredentials.lastName" />
   </div>
  <div v-show="editMode" class="flex justify-between">
