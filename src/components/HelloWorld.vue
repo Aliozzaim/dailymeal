@@ -25,17 +25,13 @@ const toggleEditMode = () => {
 const fullName = computed(() => {
   return `${userCredentials.value.name} ${userCredentials.value.lastName}`
 })
-
-
 //set wachers 
-
 // watch(userCredentials, (newValue, oldValue) => {
 //   console.log("new value", newValue)
 //   console.log("old value", oldValue)
 // })
 
 let age = ref(20)
-
 const increaseAge = () => {
   age.value++
 }
@@ -54,12 +50,17 @@ const increaseAge = () => {
     <input type="text" class=" black w-[120px] outline-none border-none "  v-model.lazy.trim="userCredentials.name" />
     <input type="text" class=" w-[120px] outline-none border-none " v-model="userCredentials.lastName" />
   </div>
- <div v-show="editMode" class="flex justify-between">
+ <div v-if="editMode" class="flex justify-between">
    <img class=" rounded-full    w-[70px]" :src="userCredentials.photo"  alt="userCredentials.photo" ></img>
-  <div class=" flex flex-col  space-y-1">
-      <p>{{ userCredentials.name }}</p>
-      <p>{{ userCredentials.lastName }}</p>
+  <div class="flex flex-col" >
+  <p v-for="(name, index) in userCredentials" :key="index" >
+      {{ index }} :  {{ name }}
+  
+    </p>
   </div>
+  
+     <!-- <div v-for=" user in userCredentials" class=" flex flex-col  space-y-1"></div>
+  </div> -->
  </div>
   <div>
     <button type="button" @click="toggleEditMode">editMode</button>
