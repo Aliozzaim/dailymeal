@@ -31,6 +31,22 @@ const fullName = computed(() => {
 //   console.log("old value", oldValue)
 // })
 
+// show me a example of lifecycle hooks
+
+// onMounted(() => {
+//   console.log("mounted")
+// })
+// onUpdated(() => {
+//   console.log("updated")
+// })
+// onUnmounted(() => {
+//   console.log("unmounted")
+// })
+//before mount
+// onBeforeMount(() => {
+//   console.log("before mount")
+// })
+
 let age = ref(20)
 const increaseAge = () => {
   age.value++
