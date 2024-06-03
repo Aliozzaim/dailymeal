@@ -68,11 +68,7 @@ const increaseAge = () => {
   </div>
 <div>
     <h1 class="flex flex-col">
-    <!-- <span>age: {{ age }}</span>
-    <div class="">
-      <button type="button" @click="increaseAge">increase age</button>
-      <button type="button" @click="age--">decrease age</button>
-    </div> -->
+   
   </h1>
 </div>
 </template>
