@@ -54,7 +54,9 @@ const increaseAge = () => {
 </script>
 
 <template>
-  
+  <Transition>
+    birds fly
+  </Transition>
   <div class="flex flex-col items-start justify-start">
     <p v-html="HTMLTag"></p>
     <a :href="link">:href</a>
