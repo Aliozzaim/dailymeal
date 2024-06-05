@@ -3,6 +3,7 @@ import HelloWorld from "./components/HelloWorld.vue"
 </script>
 
 <template>
+  asdfasdfasd
   <HelloWorld msg="Vue Music App" />
 </template>
 

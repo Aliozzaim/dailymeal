@@ -20,12 +20,12 @@ const toggleEditMode = () => {
   editMode.value = !editMode.value
 }
 
-//computed propertiy 
+//computed propertiy
 
 const fullName = computed(() => {
   return `${userCredentials.value.name} ${userCredentials.value.lastName}`
 })
-//set wachers 
+//set wachers
 // watch(userCredentials, (newValue, oldValue) => {
 //   console.log("new value", newValue)
 //   console.log("old value", oldValue)
@@ -54,7 +54,7 @@ const increaseAge = () => {
 </script>
 
 <template>
-  <Transition>
+  <!-- <Transition>
     birds fly
   </Transition>
   <div class="flex flex-col items-start justify-start">
@@ -77,8 +77,7 @@ const increaseAge = () => {
     </p>
   </div>
   
-     <!-- <div v-for=" user in userCredentials" class=" flex flex-col  space-y-1"></div>
-  </div> -->
+
  </div>
   <div>
     <button type="button" @click="toggleEditMode">editMode</button>
@@ -88,7 +87,7 @@ const increaseAge = () => {
     <h1 class="flex flex-col">
    
   </h1>
-</div>
+</div> -->
 </template>
 
 <style scoped>
@@ -110,6 +109,6 @@ button {
   max-width: 250px;
 }
 input {
-color: black;
+  color: black;
 }
 </style>
