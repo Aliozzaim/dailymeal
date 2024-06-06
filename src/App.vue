@@ -1,10 +1,33 @@
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue"
+import router from "./router"
 </script>
 
 <template>
-  asdfasdfasd
-  <HelloWorld msg="Vue Music App" />
+  <div>
+    <img class="logo" src="https://vuejs.org/images/logo.png" alt="Vue logo" />
+
+    <router-link :to="{ name: 'byName', params: { name: 'exampleName' } }">
+      Search Meals
+    </router-link>
+
+    <router-link
+      :to="{ name: 'byLetter', params: { letter: 'exampleLetter' } }"
+    >
+      Search by letter
+    </router-link>
+
+    <router-link
+      :to="{
+        name: 'byIngredient',
+        params: { ingredient: 'exampleIngredient' },
+      }"
+    >
+      Search by ingredients
+    </router-link>
+  </div>
+
+  <router-view></router-view>
 </template>
 
 <style scoped>

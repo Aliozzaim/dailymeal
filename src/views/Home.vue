@@ -1,13 +1,39 @@
 <script setup>
+import { computed, onBeforeMount, onMounted } from "vue"
 import { useRoute, useRouter } from "vue-router"
-alert("Hello! I am an alert box!!")
+import axsiosClient from "../axsiosClient"
+import store from "../store"
+const meals = computed(() => store.state.meals)
+//give me letees as a string
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const currentRoute = useRoute()
+const router = useRouter()
+
+onMounted(async () => {
+  axsiosClient.get("/list.php?i=lis").then((response) => {
+    store.commit("setMeals", response.data)
+    console.log(response.data)
+  })
+})
 </script>
 
 <template>
-  <div>
-    <h1>Home</h1>
-    <p>Current Route: {{ currentRoute }}</p>
-    <button @click="goToAbout">Go to About</button>
+  <div>{{ meals[0] }}</div>
+  <input
+    type="text"
+    class="rounded border-2 border-gray-100 w-full"
+    placeholder="Search for Meals"
+  />
+
+  <div class="flex gap-1">
+    <router-link
+      v-for="letter in letters"
+      :key="letter"
+      :to="`/${letter}`"
+      class="text-blue-500"
+    >
+      {{ letter }}
+    </router-link>
   </div>
 </template>
 
