@@ -2,7 +2,7 @@
   <div>
     <input
       type="text"
-      class="rounded border-2 border-gray-100 w-full"
+      class="rounded border-2 border-gray-100 w-full h-min-[250px]"
       placeholder="Search for Meals"
     />
     <div class="grid grid-cols-3 gap-4">

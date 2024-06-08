@@ -1,3 +1,3 @@
 export default {
-  meals: ["salmon", "beef", "chicken", "tofu"],
+  meals: ["", "beef", "chicken", "tofu"],
 }
