@@ -11,14 +11,14 @@ const router = useRouter()
 
 onMounted(async () => {
   axsiosClient.get("/list.php?i=lis").then((response) => {
-    store.commit("setMeals", response.data)
+    store.commit("searchedMeals.meals", response.data)
     console.log(response.data)
   })
 })
 </script>
 
 <template>
-  <div>{{ meals[0] }}</div>
+  <!-- <div>{{ store.searchedMeals.meals[0] }}</div> -->
   <input
     type="text"
     class="rounded border-2 border-gray-100 w-full"

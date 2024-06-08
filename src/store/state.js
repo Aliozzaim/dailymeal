@@ -1,3 +1,8 @@
 export default {
-  meals: ["", "beef", "chicken", "tofu"],
+  searchedMeals: {
+    loading: false,
+    meals: [],
+  },
+  changeAuthMethod: "Login",
 }
+1

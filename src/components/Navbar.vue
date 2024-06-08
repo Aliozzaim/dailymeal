@@ -1,5 +1,7 @@
 <template>
-  <header class="bg-white shadow h-16 flex justify-between items-stretch">
+  <header
+    class="bg-white !mb-[20px] shadow h-16 flex justify-between items-stretch"
+  >
     <router-link
       :to="{ name: 'home' }"
       class="inline-flex items-center h-full px-5 text-orange-500 font-bold"
@@ -30,7 +32,14 @@
       :to="{ name: 'auth' }"
       class="inline-flex items-center px-2 h-full transition-colors hover:bg-orange-500 hover:text-white"
     >
-      Login
+      {{ logindMethod === "Login" ? "Login" : "Register" }}
     </router-link>
   </header>
 </template>
+
+<script setup>
+import { ref, computed } from "vue"
+import store from "../store"
+
+const logindMethod = computed(() => store.state.changeAuthMethod)
+</script>
