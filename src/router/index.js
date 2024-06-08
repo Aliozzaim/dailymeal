@@ -46,7 +46,8 @@ const routes = [
     ],
   },
   {
-    path: "/guest",
+    path: "/auth",
+    name: "auth",
     component: GuestLayout,
   },
 ]
