@@ -2,7 +2,8 @@
   <div class="bg-red-50">
     <input
       type="text"
-      class="rounded border-2 border-gray-100 w-full"
+      @input="SeachMeals($event.target.value)"
+      class="rounded border-2 text-black border-gray-100 w-full"
       placeholder="Search for Meals"
     />
     <div class="grid grid-cols-3 gap-4">
@@ -18,6 +19,6 @@ import store from "../store"
 const meals = computed(() => store.state.meals)
 
 function SeachMeals(keyword) {
-  //  store.dispatch("searchMeals", keyword.value)
+  store.dispatch("searchMeals", keyword)
 }
 </script>
