@@ -1,40 +1,28 @@
 <script setup>
-import { computed, onBeforeMount, onMounted } from "vue"
+import { computed, onMounted, ref } from "vue"
 import { useRoute, useRouter } from "vue-router"
 import axsiosClient from "../axsiosClient"
 import store from "../store"
-const meals = computed(() => store.state.meals)
-//give me letees as a string
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-const currentRoute = useRoute()
-const router = useRouter()
+import Meals1 from "../components/Meal.vue"
+
+const meals = ref([])
 
 onMounted(async () => {
-  axsiosClient.get("/list.php?i=lis").then((response) => {
-    store.commit("searchedMeals.meals", response.data)
-    console.log(response.data)
-  })
+  setTimeout(async () => {
+    for (let i = 0; i < 10; i++) {
+      axsiosClient
+        .get(`random.php`)
+        .then(({ data }) => meals.value.push(data.meals[0]))
+    }
+  }, 1000)
 })
 </script>
 
 <template>
-  <!-- <div>{{ store.searchedMeals.meals[0] }}</div> -->
-  <input
-    type="text"
-    class="rounded border-2 border-gray-100 w-full"
-    placeholder="Search for Meals"
-  />
-
-  <div class="flex gap-1">
-    <router-link
-      v-for="letter in letters"
-      :key="letter"
-      :to="`/${letter}`"
-      class="text-blue-500"
-    >
-      {{ letter }}
-    </router-link>
+  <div class="p-8 pb-0 text-orange-500">
+    <h1 class="text-4xl font-bold mb-4">Random Meals</h1>
   </div>
+  <template v-if="meals.length">
+    <Meals1 :meals="meals" />
+  </template>
 </template>
-
-<style></style>

@@ -1,6 +1,7 @@
 export function setSearchedMeals(state, meals) {
   state.searchedMeals.meals = meals
 }
+
 export function setChangeAuthMethod(state, method) {
   state.changeAuthMethod = method
 }
