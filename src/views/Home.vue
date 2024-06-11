@@ -1,7 +1,7 @@
 <script setup>
 import { computed, onMounted, ref } from "vue"
 import { useRoute, useRouter } from "vue-router"
-import axsiosClient from "../axsiosClient"
+import axiosClient from "../axiosClient"
 import store from "../store"
 import Meals1 from "../components/Meal.vue"
 
@@ -9,8 +9,8 @@ const meals = ref([])
 
 onMounted(async () => {
   setTimeout(async () => {
-    for (let i = 0; i < 10; i++) {
-      axsiosClient
+    for (let i = 0; i < 9; i++) {
+      axiosClient
         .get(`random.php`)
         .then(({ data }) => meals.value.push(data.meals[0]))
     }
