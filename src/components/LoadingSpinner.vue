@@ -23,8 +23,8 @@ export default {
   width: 170px;
   height: 170px;
   border-radius: 50%;
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: #ff0000;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: #ff9800;
   animation: spin 1s ease infinite;
 }
 

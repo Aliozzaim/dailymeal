@@ -1,6 +1,9 @@
 <template>
-  <div class="register-container">
+  <div class="register-container relative">
     <h1 class="mb-4">Register</h1>
+    <button class="back-button absolute top-1" @click="goBack">
+      <i class="fas fa-arrow-left"></i>
+    </button>
     <form @submit.prevent="register">
       <div class="form-group">
         <label for="username">Username</label>
@@ -37,6 +40,9 @@ const router = useRouter()
 const username = ref("")
 const email = ref("")
 const password = ref("")
+const goBack = () => {
+  router.back()
+}
 
 const register = async () => {
   try {
@@ -53,11 +59,9 @@ const register = async () => {
     })
 
     if (response.ok) {
-      console.log("Registration successful")
       // Redirect to the login or another page
       store.commit("setChangeAuthMethod", "Login")
     } else {
-      console.log("Registration failed")
       // Display error message to the user
     }
   } catch (error) {
@@ -82,7 +86,18 @@ const switchToLogin = () => {
 .form-group {
   margin-bottom: 20px;
 }
-
+.back-button {
+  background-color: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
 label {
   display: block;
   margin-bottom: 5px;

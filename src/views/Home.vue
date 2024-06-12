@@ -7,7 +7,7 @@ import Meals1 from "../components/Meal.vue"
 import LoadingSpinner from "../components/LoadingSpinner.vue"
 
 const meals = ref([])
-const fetchLimit = ref(9)
+const fetchLimit = ref(6)
 const Loading = ref(false)
 const rondomMeasl = computed(() => store.state.randomMeals)
 
@@ -48,14 +48,16 @@ watch(fetchLimit, async (newLimit, oldLimit) => {
 </script>
 
 <template>
-  <div class="p-8 pb-0 text-[#ff0000] flex justify-between items-center">
-    <h1 class="text-4xl font-bold mb-4">Today's Favorite Meals</h1>
-    <button
+  <div class="px-8 pb-0 text-white flex justify-between items-center">
+    <h1 class="text-4xl mb-[20px] font-bold">Today's Favorite Meals</h1>
+
+    <v-btn
       @click="fetchRandomMeals"
-      class="bg-[#ff0000] text-white px-3 py-2 rounded shadow"
-    >
-      Refresh Meals
-    </button>
+      color="orange"
+      class="rounded shadow"
+      outlined
+      text="Refresh Meals"
+    ></v-btn>
   </div>
   <template v-if="meals.length === 0 && !Loading.value">
     <LoadingSpinner />

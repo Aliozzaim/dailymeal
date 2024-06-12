@@ -1,6 +1,6 @@
 <template>
-  <div class="login-container">
-    <button class="back-button" @click="goBack">
+  <div class="login-container relative">
+    <button class="back-button absolute top-1" @click="goBack">
       <i class="fas fa-arrow-left"></i>
     </button>
     <h1 class="mb-4">Login</h1>

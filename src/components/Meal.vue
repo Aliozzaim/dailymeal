@@ -3,7 +3,7 @@
     <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
   </div>
   <div v-if="!meals.length" class="flex justify-center text-gray-600 p-8">
-    <slot name="message"> {{ message }}</slot>
+    <div name="message">{{ message }}</div>
   </div>
 </template>
 
@@ -24,5 +24,4 @@ const { meals, message } = defineProps({
     default: "No meals found",
   },
 })
-console.log("message", message)
 </script>

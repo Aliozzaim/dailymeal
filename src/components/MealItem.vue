@@ -1,28 +1,49 @@
 <template>
-  <div
-    class="bg-white text-black shadow rounded-xl p-2 hover:scale-105 transition-all"
+  <v-card
+    color="#323a48"
+    class="mx-auto hover:scale-105 cursor-pointer transition-all"
+    width="350"
   >
     <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
-      <img
+      <v-img
         :src="meal.strMealThumb"
         :alt="meal.strMeal"
-        class="rounded-t-xl w-full h-48 object-cover"
-      />
+        class="align-end text-white"
+        height="150"
+        src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+        cover
+      >
+        <v-card-title class="backdrop-blur-md">{{ meal.strMeal }}</v-card-title>
+      </v-img>
     </router-link>
-    <div class="p-3">
-      <h3 class="font-bold text-black">{{ meal.strMeal }}</h3>
-      <p class="mb-4 text-black">
-        <!-- {{ $filters.truncateWords(meal.strInstructions, 20) }} -->
-      </p>
-      <div class="flex items-center justify-between">
-        <YouTubeButton :href="meal.strYoutube" />
-      </div>
-    </div>
-  </div>
+
+    <v-card-text>
+      <span class="text-[13px]">
+        {{ truncateWords(meal.strInstructions, 15) }}
+      </span>
+    </v-card-text>
+
+    <v-card-actions>
+      <v-btn
+        variant="tonal"
+        :href="meal.strYoutube"
+        color="orange"
+        text="Youtube"
+      ></v-btn>
+      <v-btn
+        variant="tonal"
+        :href="meal.strSource"
+        color="orange"
+        text="Explore"
+      ></v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script setup>
 import YouTubeButton from "./YouTubeButton.vue"
+import truncateWords from "../filters/index.js"
+import { tr } from "vuetify/locale"
 
 const { meal } = defineProps({
   meal: {
