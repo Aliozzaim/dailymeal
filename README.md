@@ -49,12 +49,16 @@ The application uses Axios to fetch data from the MealDB API. The `axiosClient.j
 1. Clone this repository.
 2. Navigate to the project directory.
 
-## Install dependencies:
-sh
-npm install
-Run the development server:
-sh
-npm run dev
-Build for production:
-sh
-npm run build
+
+## Installation
+
+1. **Install dependencies**:
+   ```sh
+   npm install
+
+   npm run dev
+   
+   npm run build
+
+
+
