@@ -1,6 +1,6 @@
 <template>
   <header
-    class="bg-[#282828] !mb-[20px] shadow h-16 flex justify-between items-stretch rounded-b-md pr-[30px]"
+    class="bg-[#282828] !mb-[15px] shadow h-16 flex justify-between items-stretch rounded-b-md pr-[30px]"
   >
     <router-link
       :to="{ name: 'home' }"

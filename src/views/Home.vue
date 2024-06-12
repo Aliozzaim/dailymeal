@@ -48,9 +48,8 @@ watch(fetchLimit, async (newLimit, oldLimit) => {
 </script>
 
 <template>
-  <div class="px-8 pb-0 text-white flex justify-between items-center">
-    <h1 class="text-4xl mb-[20px] font-bold">Today's Favorite Meals</h1>
-
+  <div class="px-8 pb-0 text-white flex justify-between items-center mb-[15px]">
+    <h1 class="text-4xl font-bold">Today's Favorite Meals</h1>
     <v-btn
       @click="fetchRandomMeals"
       color="orange"
