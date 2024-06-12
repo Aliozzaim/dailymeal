@@ -49,7 +49,7 @@ watch(fetchLimit, async (newLimit, oldLimit) => {
 
 <template>
   <div class="p-8 pb-0 text-[#ff0000] flex justify-between items-center">
-    <h1 class="text-4xl font-bold mb-4">Random Meals</h1>
+    <h1 class="text-4xl font-bold mb-4">Today's Favorite Meals</h1>
     <button
       @click="fetchRandomMeals"
       class="bg-[#ff0000] text-white px-3 py-2 rounded shadow"

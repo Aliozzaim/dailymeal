@@ -3,17 +3,26 @@
     <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
   </div>
   <div v-if="!meals.length" class="flex justify-center text-gray-600 p-8">
-    There are no meals
+    <slot name="message"> {{ message }}</slot>
   </div>
 </template>
 
 <script setup>
 import MealItem from "./MealItem.vue"
-const { meals } = defineProps({
+import router from "../router/index.js"
+// import { ref } from "vue"
+// const currentRoute = ref(router.currentRoute.value.path)
+
+const { meals, message } = defineProps({
   meals: {
     required: true,
+
     type: Array,
   },
+  message: {
+    type: String,
+    default: "No meals found",
+  },
 })
-console.log("meals itemden", meals)
+console.log("message", message)
 </script>

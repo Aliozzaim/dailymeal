@@ -8,7 +8,8 @@ import Meals from "../components/Meal.vue"
 const route = useRoute()
 const keyword = ref("")
 const meals = computed(() => store.state.searchedMeals.meals)
-console.log(keyword)
+const message =
+  "Hello! Whether you're searching for an old favorite or a new discovery, our meal search feature makes it easy. Type a meal name to get started and find your perfect dish"
 function searchMeals() {
   if (keyword.value) {
     store.dispatch("searchMeals", keyword.value)
@@ -39,5 +40,5 @@ onMounted(() => {
       @change="searchMeals"
     />
   </div>
-  <Meals :meals="meals" />
+  <Meals :message="message" :meals="meals" />
 </template>
