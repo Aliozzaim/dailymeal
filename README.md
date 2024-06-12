@@ -52,7 +52,7 @@ The application uses Axios to fetch data from the MealDB API. The `axiosClient.j
 
 ## Installation
 
-1. **Install dependencies**:
+
    ```sh
    npm install
 
