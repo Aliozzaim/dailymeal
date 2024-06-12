@@ -9,7 +9,7 @@
         :src="meal.strMealThumb"
         :alt="meal.strMeal"
         class="align-end text-white"
-        height="150"
+        height="142"
         src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
         cover
       >
@@ -18,11 +18,10 @@
     </router-link>
 
     <v-card-text>
-      <span class="text-[13px]">
+      <span class="text-[13px] !p-[8px]">
         {{ truncateWords(meal.strInstructions, 15) }}
       </span>
     </v-card-text>
-
     <v-card-actions>
       <v-btn
         variant="tonal"
