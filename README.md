@@ -47,7 +47,7 @@ The application uses Axios to fetch data from the MealDB API. The `axiosClient.j
 
 ## Installation
 1. Clone this repository.
-2. Navigate to the project directory.
+2. Navigate to the project directory
 
 
 ## Installation
