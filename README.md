@@ -50,7 +50,7 @@ The application uses Axios to fetch data from the MealDB API. The `axiosClient.j
 2. Navigate to the project directory
 
 
-## Installation
+## Installation.
 
 
    ```sh
